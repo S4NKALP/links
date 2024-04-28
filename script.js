@@ -114,7 +114,7 @@ const links = [
     {
         name: 'Portfolio',
         description: '/home/S4NKALP',
-        url: 'https://S4NKALP.github.io/Protofile',
+        url: 'https://S4NKALP.github.io/Protofolio',
         icon: 'fa-brands fa-fort-awesome',
         color: '#1688f0'
     },
