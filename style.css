@@ -2,9 +2,9 @@
     :root {
         --text: #111;
         --accent: #1688f0;
-        --bg-main: #fff;
-        --bg-link: #f0f0f0;
-        --bg-alt: #f5f5f5;
+        --bg-main: linear-gradient(to bottom right, #fff, #f0f0f0);
+        --bg-link: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+        --bg-alt: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
     }
 }
 
@@ -12,9 +12,9 @@
     :root {
         --text: #e5e5e5;
         --accent: #1688f0;
-        --bg-main: #000;
-        --bg-link: #0f0f1a;
-        --bg-alt: #0a0a0f;
+        --bg-main: linear-gradient(to bottom right, #000, #0a0a0f);
+        --bg-link: linear-gradient(to bottom right, #0f0f1a, #1a1a2e);
+        --bg-alt: linear-gradient(to bottom right, #0a0a0f, #1a1a2e);
     }
 }
 
@@ -27,10 +27,11 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--bg-main);
+    font-family: "Open Sans", sans-serif;
+    background: var(--bg-main);
     color: var(--text);
     font-size: 16px;
+    min-height: 100vh;
 }
 
 .container {
@@ -44,7 +45,6 @@ body {
 }
 
 .hide {
-    /* '!important' is to make sure that when we add the class using JS, it takes precendence */
     display: none !important;
 }
 
@@ -75,15 +75,21 @@ h2 {
 img {
     border: 2px solid var(--accent);
     box-shadow:
-        0 0px 6px var(--accent),
-        0 0px 6px var(--accent);
+        0 0 8px rgba(22, 136, 240, 0.8),
+        0 0 12px rgba(22, 136, 240, 0.6);
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #125ea8;
 }
 
 ul {
@@ -103,18 +109,21 @@ input {
     border: 2px solid var(--accent);
     color: var(--text);
     text-align: center;
+    box-shadow:
+        0 4px 6px rgba(22, 136, 240, 0.4),
+        0 1px 3px rgba(22, 136, 240, 0.3);
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: var(--bg-link);
-    margin-top: 0;
+    background: var(--bg-link);
     padding: 2em;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 4em;
+    border-radius: 20px;
+    box-shadow:
+        0 4px 10px rgba(22, 136, 240, 0.4),
+        0 1px 3px rgba(22, 136, 240, 0.3);
 }
 
 h3 {
@@ -140,14 +149,19 @@ h3 {
     border: 1px solid var(--accent);
     padding: 1em;
     text-align: center;
-    background-color: var(--bg-alt);
+    background: var(--bg-alt);
+    transition: all 0.3s ease-in-out;
+    box-shadow:
+        0 4px 6px rgba(22, 136, 240, 0.2),
+        0 1px 3px rgba(22, 136, 240, 0.2);
 }
 
 .link-list li:hover {
-    background-color: var(--bg-main);
+    background: var(--bg-main);
+    transform: scale(1.02);
     box-shadow:
-        0 3px 6px var(--accent),
-        0 3px 6px var(--accent);
+        0 6px 12px rgba(22, 136, 240, 0.5),
+        0 3px 8px rgba(22, 136, 240, 0.4);
 }
 
 @media (min-width: 700px) {
